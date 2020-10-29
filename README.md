@@ -10,4 +10,6 @@ To convert tokens back, they are not burned by instead sent back to central addr
 
 ---
 
+[!] Before deployment, don't forget to modify contracts/Burnable.sol and replace deposit address.
+
 After deployment, mint wanted number of tokens, then call `removeMinter()` to disable any further minting.
