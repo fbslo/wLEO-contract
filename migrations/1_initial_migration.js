@@ -1,9 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const wToken = artifacts.require("wToken");
 
 module.exports = function(deployer) {
-  if (deployer.network === 'skipMigrations') {
-    return;
-  } else {
-    deployer.deploy(Migrations);
-  }
+  deployer.deploy(wToken);
 };

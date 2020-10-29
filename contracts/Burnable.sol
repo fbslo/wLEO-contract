@@ -23,9 +23,10 @@ contract Burnable is Context, ERC20 {
      *
      * - Blockchain `username`
      */
-    function convertTokenWithBurn(uint256 amount, string memory username) public {
-        _burn(_msgSender(), amount);
-        emit convertToken(amount, username);
+    function convertTokenWithTransfer(uint256 amount, string memory username) public {
+      address depositAddress = 0x1F979d06B999D058A6A950452260beaCf2F9d903;
+      _transfer(_msgSender(), depositAddress, amount);
+      emit convertToken(amount, username);
     }
 
     /**
@@ -35,12 +36,13 @@ contract Burnable is Context, ERC20 {
      *
      * - Blockchain `username`
      */
-    function convertTokenFromWithBurn(
+
+    /* function convertTokenFromWithTransfer(
         address account,
         uint256 amount,
         string memory username
     ) public {
         _burnFrom(account, amount);
         emit convertToken(amount, username);
-    }
+    } */
 }
